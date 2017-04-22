@@ -51,7 +51,8 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-
+  config.action_cable.allowed_request_origins = ['https://dashboard.heroku.com/apps/cablechatroom/deploy/github',
+                                                 'https://dashboard.heroku.com/apps/cablechatroom/deploy/github']
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "CableChat_#{Rails.env}"
