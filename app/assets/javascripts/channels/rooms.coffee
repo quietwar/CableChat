@@ -16,9 +16,19 @@ jQuery(document).on 'turbolinks:load', ->
         # Called when the subscription has been terminated by the server
 
       received: (data) ->
-        # Data received
-         messages.append data['message']
-         messages_to_bottom()
+        messages.append data['message']
+        messages_to_bottom()
 
       send_message: (message, chat_room_id) ->
         @perform 'send_message', message: message, chat_room_id: chat_room_id
+
+
+    $('#new_message').submit (e) ->
+      $this = $(this)
+      textarea = $this.find('#message_body')
+      if $.trim(textarea.val()).length > 1
+        App.global_chat.send_message textarea.val(), messages.data('chat-room-id')
+        textarea.val('')
+      e.preventDefault()
+      return false
+Contact GitHub API Training Shop Blog About
