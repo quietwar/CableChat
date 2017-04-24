@@ -85,8 +85,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-config.action_cable.allowed_request_origins = ['https://sitepoint-actioncable.herokuapp.com',
-                                               'http://sitepoint-actioncable.herokuapp.com']
+config.action_cable.allowed_request_origins = ['https://cablechatroom.herokuapp.com/',
+                                               'https://cablechatroom.herokuapp.com/']
 
 config.action_cable.url = "wss://sitepoint-actioncable.herokuapp.com/cable"
 end
